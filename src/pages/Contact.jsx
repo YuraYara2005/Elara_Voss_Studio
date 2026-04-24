@@ -260,4 +260,4 @@ export default function Contact() {
     </motion.div>
   );
 }
-</parameter>
+
