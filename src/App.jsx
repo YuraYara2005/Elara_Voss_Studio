@@ -1,5 +1,6 @@
+// file: src/App.jsx
 import React, { Suspense, lazy } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -12,8 +13,9 @@ const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Survey = lazy(() => import("./pages/Survey"));
 
-function AppInner() {
+export default function App() {
   const location = useLocation();
+  
   return (
     <>
       <ScrollToTop />
@@ -31,13 +33,5 @@ function AppInner() {
       </AnimatePresence>
       <Footer />
     </>
-  );
-}
-
-export default function App() {
-  return (
-    <BrowserRouter>
-      <AppInner />
-    </BrowserRouter>
   );
 }
